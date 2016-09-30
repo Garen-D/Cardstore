@@ -1,41 +1,86 @@
 package ServerProgramming.Book;
+import org.springframework.stereotype.Controller;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+@Entity
 public class Book {
-	private long title;
-	private long author;
-	private long year;
-	private long isbn;
-	private long price;
-	public long getTitle() {
-		return title;
-	}
-	public void setTitle(long title) {
+	
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	private String title;
+	private String author;
+	private Integer year;
+	private String isbn;
+	private Double price;
+	
+	public Book(String title, String author, Integer year, String isbn, double price) {
+		super();
 		this.title = title;
-	}
-	public long getAuthor() {
-		return author;
-	}
-	public void setAuthor(long author) {
 		this.author = author;
-	}
-	public long getYear() {
-		return year;
-	}
-	public void setYear(long year) {
 		this.year = year;
-	}
-	public long getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(long isbn) {
 		this.isbn = isbn;
-	}
-	public long getPrice() {
-		return price;
-	}
-	public void setPrice(long price) {
 		this.price = price;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
 	@Override
 	public String toString() {
 		return "Book [title=" + title + ", author=" + author + ", year=" + year
