@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import javax.persistence.Entity;
 
 @Entity
 public class Book {
@@ -23,6 +23,10 @@ public class Book {
 	private Integer year;
 	private String isbn;
 	private Double price;
+	
+	public Book() {
+		
+	}
 	
 	public Book(String title, String author, Integer year, String isbn, double price) {
 		super();
