@@ -16,7 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
-public class BookSecurityConfig extends WebSecurityConfigurerAdapter {
+public class CardSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailServiceImpl userDetailsService;	
 	
@@ -31,7 +31,7 @@ public class BookSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
       .formLogin()
           .loginPage("/login")
-          .defaultSuccessUrl("/booklist")
+          .defaultSuccessUrl("/cardlist")
           .permitAll()
           .and()
       .logout()

@@ -1,27 +1,27 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Book list</title>
+	<name>Card list</name>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Add book</h1>
+	<h1>Add card</h1>
 	<div>
-		<form th:object="${book}" th:action="@{save}" action="#" method="post">
-			<label for="btitle">Book title</label>
-			<input type="text" id="btitle" th:field="*{title}" />
+		<form th:object="${card}" th:action="@{save}" action="#" method="post">
+			<label for="bname">Card name</label>
+			<input type="text" id="bname" th:field="*{name}" />
 			<div style="clear: both; display: block; height: 12px;"></div>
-			<label for="bauthor">Author name</label>
-			<input type="text" id="bauthor" th:field="*{author}" />
+			<label for="bhealth">Health name</label>
+			<input type="text" id="bhealth" th:field="*{health}" />
 			<div style="clear: both; display: block; height: 12px;"></div>
-			<label for="byear">Year</label>
-			<input type="number" id="year" th:field="*{year}" />
+			<label for="battack">Attack</label>
+			<input type="number" id="attack" th:field="*{attack}" />
 			<div style="clear: both; display: block; height: 12px;"></div>
-			<label for="bisbn">ISBN</label>
-			<input type="text" id="bisbn" th:field="*{isbn}" />
+			<label for="beffect">Effect</label>
+			<input type="text" id="beffect" th:field="*{effect}" />
 			<div style="clear: both; display: block; height: 12px;"></div>
-			<label for="bprice">Book price</label>
-			<input type="text" id="bprice" th:field="*{price}" />
+			<label for="bcost">Card cost</label>
+			<input type="text" id="bcost" th:field="*{cost}" />
 			<div style="clear: both; display: block; height: 12px;"></div>
 			
 			<label for="catlist">Category</label>

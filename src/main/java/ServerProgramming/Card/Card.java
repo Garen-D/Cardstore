@@ -1,4 +1,4 @@
-package ServerProgramming.Book;
+package ServerProgramming.Card;
 import org.springframework.stereotype.Controller;
 
 import javax.persistence.Entity;
@@ -24,87 +24,113 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class Book {
+public class Card {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	private String title;
-	private String author;
-	private Integer year;
-	private String isbn;
-	private Double price;
+	private String name;
+	private String health;
+	private Integer attack;
+	private String effect;
+	private String cost;
 
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "categoryid")
 	private Category category;
 	
-	public Book() {};
+	public Card() {};
 			
 	
-	public Book(String title, String author, Integer year,
-			String isbn, Double price, Category category) {
+	public Card(String name, String health, Integer attack,
+			String effect, String cost, Category category) {
 		super();
-		this.title = title;
-		this.author = author;
-		this.year = year;
-		this.isbn = isbn;
-		this.price = price;
+		this.name = name;
+		this.health = health;
+		this.attack = attack;
+		this.effect = effect;
+		this.cost = cost;
 		this.category = category;
 	}
+
 	public long getId() {
 		return id;
 	}
+
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getTitle() {
-		return title;
+
+
+	public String getName() {
+		return name;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getAuthor() {
-		return author;
+
+
+	public String getHealth() {
+		return health;
 	}
-	public void setAuthor(String author) {
-		this.author = author;
+
+
+	public void setHealth(String health) {
+		this.health = health;
 	}
-	public Integer getYear() {
-		return year;
+
+
+	public Integer getAttack() {
+		return attack;
 	}
-	public void setYear(Integer year) {
-		this.year = year;
+
+
+	public void setAttack(Integer attack) {
+		this.attack = attack;
 	}
-	public String getIsbn() {
-		return isbn;
+
+
+	public String getEffect() {
+		return effect;
 	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+
+
+	public void setEffect(String effect) {
+		this.effect = effect;
 	}
-	public Double getPrice() {
-		return price;
+
+
+	public String getCost() {
+		return cost;
 	}
-	public void setPrice(Double price) {
-		this.price = price;
+
+
+	public void setCost(String cost) {
+		this.cost = cost;
 	}
-	
+
+
 	public Category getCategory() {
 		return category;
 	}
-	
+
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
+
 	@Override
 	public String toString() {
 		if (this.category != null)
-			return "Book [id=" + id + ", title=" + title + ", author=" + author
-					+ ", year=" + year + ", isbn=" + isbn + ", price=" + price
+			return "Card [id=" + id + ", name=" + name + ", health=" + health
+					+ ", attack=" + attack + ", effect=" + effect + ", cost=" + cost
 					+ " category =" + this.getCategory() + "]";
-		return "Book [id=" + id + ", title=" + title + ", author=" + author
-				+ ", year=" + year + ", isbn=" + isbn + ", price=" + price
+		return "Card [id=" + id + ", name=" + name + ", health=" + health
+				+ ", attack=" + attack + ", effect=" + effect + ", cost=" + cost
 				+ "]";
 	}
 	

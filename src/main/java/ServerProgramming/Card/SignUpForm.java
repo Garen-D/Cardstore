@@ -1,4 +1,4 @@
-package ServerProgramming.Book;
+package ServerProgramming.Card;
 
 import javax.validation.constraints.Size;
 

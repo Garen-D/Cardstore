@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import ServerProgramming.Book.User;
-import ServerProgramming.Book.UserRepository;
+import ServerProgramming.Card.User;
+import ServerProgramming.Card.UserRepository;
 
 /**
  * This class is used by spring security to authenticate and authorize user

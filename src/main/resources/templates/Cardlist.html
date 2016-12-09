@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+	<name>CardList</name>
+	<meta http-equiv="Contet-Type" content="text/html; charset=UTF8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:ref="@{css/bootstrap.min.css}" />
+</head>
+<body>
+
+<div class="col-md-4">
+	<div class="col-md-4" style="padding:20px 0">
+		<form th:action="@{/logout}" method="post">
+			<input type="Submit" value="Sign out" class="btn btn-danger"/>
+		</form>
+	</div>
+		<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	</div>
+	
+	<h1>Card</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Health</th>
+			<th>Effect</th>
+			<th>Attack</th>
+			<th>Cost</th>
+			<th>Category</th>
+		</tr>
+		<tr th:each = "card : ${cards}">
+			<td th:text="${card.name}"></td>
+			<td th:text="${card.health}"></td>
+			<td th:text="${card.effect}"></td>
+			<td th:text="${card.attack}"></td>
+			<td th:text="${card.cost}"></td>
+			<td th:text="${card.category.name}"></td>
+			<td><a th:href="@{/delete/{id}(id=${card.id})}" class="btn btn-danger">Delete</a></td>
+		</tr>	
+	</table>
+	<a href="/add" class="btn btn-success">Add Card</a>
+</body>	
+</html>

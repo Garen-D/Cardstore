@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-import ServerProgramming.Book.SignUpForm;
-import ServerProgramming.Book.User;
-import ServerProgramming.Book.UserRepository;
+import ServerProgramming.Card.SignUpForm;
+import ServerProgramming.Card.User;
+import ServerProgramming.Card.UserRepository;
 
 @Controller
 public class UserController {

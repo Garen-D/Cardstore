@@ -1,4 +1,4 @@
-package ServerProgramming.Book;
+package ServerProgramming.Card;
 
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -17,7 +17,7 @@ public class Category {
  	private String name;
  
  	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
- 	private List<Book> Books;
+ 	private List<Card> Cards;
  
  	public Category() {}
 
@@ -38,12 +38,12 @@ public class Category {
  		this.name = name;
  	}
  	
- 	public List<Book> getBooks() {
- 		return Books;
+ 	public List<Card> getCards() {
+ 		return Cards;
  	}
  	
- 	public void setBooks(List<Book> books) {
- 		this.Books = books;
+ 	public void setCards(List<Card> books) {
+ 		this.Cards = books;
  	}
  	
  	@Override
